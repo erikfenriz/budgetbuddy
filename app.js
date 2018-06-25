@@ -4,7 +4,7 @@ var budgetController = (function () {
 
 var UIController = (function () {
 
-    DOMstrings = {
+    let DOMStrings = {
         inputType: '.add__type',
         inputDescription: '.add__description',
         inputValue: '.add__value',
@@ -14,13 +14,13 @@ var UIController = (function () {
     return {
         getInput: function () {
             return {
-                type: document.querySelector(DOMstrings.inputType).value,
-                description: document.querySelector(DOMstrings.inputDescription).value,
-                value: document.querySelector(DOMstrings.inputValue).value
+                type: document.querySelector(DOMStrings.inputType).value,
+                description: document.querySelector(DOMStrings.inputDescription).value,
+                value: document.querySelector(DOMStrings.inputValue).value
             };
         },
         getDOMstrings: function () {
-            return DOMstrings;
+            return DOMStrings;
         }
 
     };
@@ -30,7 +30,7 @@ var UIController = (function () {
 
 var controller = (function (budgetCtrl, UICtrl) {
 
-    var DOM = UIController.getDOMstrings();
+    let DOM = UIController.getDOMstrings();
 
     var ctrlAddItem = function () {
         var input = UICtrl.getInput();
